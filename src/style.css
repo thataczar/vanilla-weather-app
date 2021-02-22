@@ -1,0 +1,148 @@
+body {
+  margin-top: 20px;
+  background-color: #81717a;
+  font-family: "Montserrat", sans-serif;
+}
+.input-group {
+  width: 100%;
+  margin-top: 15px;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1,
+h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 5px 5px 5px rgb(83, 83, 83);
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.C-F {
+  text-align: left;
+  color: #fff;
+}
+.current-temp,
+.current-icon {
+  font-size: 65px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+}
+.current-weather {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+}
+.feels-like,
+.high-low {
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.container {
+  max-width: 350px;
+  margin: 0 auto;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.main {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+.col-weather {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+td,
+th {
+  width: 33.33333333333%;
+  text-align: center;
+  font-size: 15px;
+  color: #423b3f;
+  font-weight: bold;
+}
+.forecast {
+  margin-bottom: 15px;
+  color: #423b3f;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.fa-cloud {
+  font-size: 22px;
+  color: lightgrey;
+}
+.h-l-forecast {
+  font-size: 12px;
+}
+.fa-cloud-rain {
+  color: lightgrey;
+}
+.btn-outline-primary {
+  color: #d3d3d3;
+  border-color: #d3d3d3;
+  font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+}
+
+.btn-check:active + .btn-outline-primary,
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-outline-primary:active {
+  color: #81717a;
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+}
+
+.btn-check:active + .btn-outline-primary:focus,
+.btn-check:checked + .btn-outline-primary:focus,
+.btn-outline-primary.active:focus,
+.btn-outline-primary.dropdown-toggle.show:focus,
+.btn-outline-primary:active:focus {
+  box-shadow: none;
+}
+
+.btn-check:focus + .btn-outline-primary,
+.btn-outline-primary:focus {
+  box-shadow: none;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #423b3f;
+  outline: 0;
+  box-shadow: none;
+}
+
+.open-sourced {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: smaller;
+}
+
+.open-sourced a {
+  color: #fff;
+  font-weight: bold;
+}
