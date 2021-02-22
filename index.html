@@ -25,7 +25,27 @@
 </head>
 <body>
     <div class="container">
-        
+        <form class="p-2" id="search-form">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="search-city-input"
+            placeholder="Search city"
+            autocomplete="off"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              title="Current location"
+              id="current-location-button"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
       <script src="src/script.js"></script>
 </body>
