@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background-color: #81717a;
+  background-color: #383940;
   font-family: "Montserrat", sans-serif;
 }
 .input-group {
@@ -9,13 +9,12 @@ body {
 }
 h1 {
   text-transform: uppercase;
-  font-weight: bold;
 }
 h1,
 h2 {
   text-align: center;
-  color: #fff;
-  text-shadow: 5px 5px 5px rgb(83, 83, 83);
+  color: #a98ab0;
+  font-weight: bold;
 }
 
 h2 {
@@ -24,14 +23,14 @@ h2 {
 
 .C-F {
   text-align: left;
-  color: #fff;
+  color: #f1f1f0;
 }
 .current-temp,
 .current-icon {
-  font-size: 65px;
+  font-size: 60px;
   line-height: 1.2;
   text-align: center;
-  color: #fff;
+  color: #f1f1f0;
   padding-top: 10px;
 }
 .current-weather {
@@ -39,13 +38,13 @@ h2 {
   text-align: center;
   font-weight: bold;
   font-style: italic;
-  color: #fff;
+  color: #f1f1f0;
 }
 .feels-like,
 .high-low {
   font-size: 16px;
   text-align: center;
-  color: #fff;
+  color: #f1f1f0;
   font-weight: bold;
 }
 .container {
@@ -70,12 +69,12 @@ th {
   width: 33.33333333333%;
   text-align: center;
   font-size: 15px;
-  color: #423b3f;
+  color: #ada9ad;
   font-weight: bold;
 }
 .forecast {
   margin-bottom: 15px;
-  color: #423b3f;
+  color: #ada9ad;
   text-align: center;
   font-size: 16px;
   padding-top: 10px;
@@ -99,7 +98,7 @@ th {
 }
 
 .btn-outline-primary:hover {
-  color: #fff;
+  color: #f1f1f0;
   background-color: #d3d3d3;
   border-color: #d3d3d3;
 }
@@ -109,7 +108,7 @@ th {
 .btn-outline-primary.active,
 .btn-outline-primary.dropdown-toggle.show,
 .btn-outline-primary:active {
-  color: #81717a;
+  color: #383940;
   background-color: #d3d3d3;
   border-color: #d3d3d3;
 }
@@ -128,21 +127,21 @@ th {
 }
 
 .form-control:focus {
-  color: #212529;
-  background-color: #fff;
-  border-color: #423b3f;
+  color: #383940;
+  background-color: #f1f1f0;
+  border-color: #69586d;
   outline: 0;
   box-shadow: none;
 }
 
 .open-sourced {
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: #f1f1f0;
   text-align: center;
   font-size: smaller;
 }
 
 .open-sourced a {
-  color: #fff;
+  color: #f1f1f0;
   font-weight: bold;
 }
