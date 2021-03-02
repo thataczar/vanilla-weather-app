@@ -35,6 +35,7 @@ function setCityName(city) {
   cityName.innerHTML = city;
   currentCity = city;
 }
+
 let form = document.querySelector("#search-form");
 
 form.addEventListener("submit", search);
@@ -75,6 +76,8 @@ radioButton2.addEventListener("change", changeTemperatureF);
 
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getPosition);
+
+getPosition();
 
 function getPosition() {
   navigator.geolocation.getCurrentPosition(getCurrentLocation);
