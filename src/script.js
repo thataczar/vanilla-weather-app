@@ -1,3 +1,9 @@
+let apiKey = "4b3740ee7f69ae28c1197f4e97a1acc7";
+
+/**
+ * Current day and time
+ */
+
 let now = new Date();
 
 let dateTime = document.querySelector("#date-time");
@@ -19,34 +25,9 @@ let day = days[now.getDay()];
 
 dateTime.innerHTML = `${day} | ${hours}:${minutes}h`;
 
-let currentCity = "";
-
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-city-input");
-
-  setCityName(searchInput.value);
-
-  showCurrentTemperature(searchInput.value, "metric");
-}
-
-function setCityName(city) {
-  let cityName = document.querySelector("#city-name");
-  cityName.innerHTML = city;
-  currentCity = city;
-}
-
-let form = document.querySelector("#search-form");
-
-form.addEventListener("submit", search);
-
-let apiKey = "4b3740ee7f69ae28c1197f4e97a1acc7";
-
-function showCurrentTemperature(city, unit) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
-
-  axios.get(apiUrl).then(showTemperature);
-}
+/**
+ * Current temperature to the HTML
+ */
 
 let currentTempMain = document.querySelector("#current-temperature");
 let degrees = "C";
@@ -57,6 +38,49 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   currentTempMain.innerHTML = `${temperature}°${degrees}`;
 }
+
+/**
+ * Current temperature API call from search bar and metrics toggle
+ */
+
+function showCurrentTemperature(city, unit) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+
+/**
+ * Current city to HTML and remember current city
+ */
+
+let currentCity = "";
+
+function setCityName(city) {
+  let cityName = document.querySelector("#city-name");
+  cityName.innerHTML = city;
+  currentCity = city;
+}
+
+/**
+ * Search current city
+ */
+
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-city-input");
+
+  setCityName(searchInput.value);
+
+  showCurrentTemperature(searchInput.value, "metric");
+}
+
+let form = document.querySelector("#search-form");
+
+form.addEventListener("submit", search);
+
+/**
+ * Change metrics
+ */
 
 let radioButton1 = document.querySelector("#btnradio1");
 let radioButton2 = document.querySelector("#btnradio2");
@@ -74,13 +98,13 @@ function changeTemperatureF(event) {
 }
 radioButton2.addEventListener("change", changeTemperatureF);
 
-let currentLocation = document.querySelector("#current-location-button");
-currentLocation.addEventListener("click", getPosition);
+/**
+ * Geolocation for initial location and current location button
+ */
 
-getPosition();
-
-function getPosition() {
-  navigator.geolocation.getCurrentPosition(getCurrentLocation);
+function displayCurrentCity(response) {
+  setCityName(response.data.name);
+  showTemperature(response);
 }
 
 function getCurrentLocation(position) {
@@ -92,7 +116,11 @@ function getCurrentLocation(position) {
   axios.get(apiUrl).then(displayCurrentCity);
 }
 
-function displayCurrentCity(response) {
-  setCityName(response.data.name);
-  showTemperature(response);
+function getPosition() {
+  navigator.geolocation.getCurrentPosition(getCurrentLocation);
 }
+
+let currentLocation = document.querySelector("#current-location-button");
+currentLocation.addEventListener("click", getPosition);
+
+getPosition();
