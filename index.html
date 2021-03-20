@@ -84,12 +84,12 @@
           </div>
         </div>
         <div class="row justify-content-end">
-          <div class="col-6 current-weather p-1">Drizzle</div>
+          <div id="weather-main" class="col-6 current-weather p-1"></div>
         </div>
         <br />
         <div class="row">
-          <div class="col-6 feels-like">Feels like: 5°</div>
-          <div class="col-6 high-low">H: 11° |&nbsp; L: 7°</div>
+          <div class="col-6 feels-like">Feels like: <span id="feels-like"></span></div>
+          <div class="col-6 high-low">H: <span id="current-temperature-high"></span> |&nbsp; L: <span id="current-temperature-low"></span></div>
         </div>
       </div>
       <br />
@@ -98,15 +98,13 @@
         <thead>
           <tr>
             <th class="border border-0 p-0">Wind</th>
-            <th class="border border-0 p-0">Precipitation</th>
             <th class="border border-0 p-0">Humidity</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="border border-0 p-0">17 km/h</td>
-            <td class="border border-0 p-0">36%</td>
-            <td class="border border-0 p-0">85%</td>
+            <td id="wind-speed" class="border border-0 p-0"></td>
+            <td id="humidity" class="border border-0 p-0"></td>
           </tr>
         </tbody>
       </table>

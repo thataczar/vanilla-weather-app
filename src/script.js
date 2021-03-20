@@ -29,14 +29,43 @@ dateTime.innerHTML = `${day} | ${hours}:${minutes}h`;
  * Current temperature to the HTML
  */
 
-let currentTempMain = document.querySelector("#current-temperature");
 let degrees = "C";
+let currentTempMain = document.querySelector("#current-temperature");
+let feelsLike = document.querySelector("#feels-like");
+let weatherDescription = document.querySelector("#weather-main");
+let currentHigh = document.querySelector("#current-temperature-high");
+let currentLow = document.querySelector("#current-temperature-low");
+let windSpeed = document.querySelector("#wind-speed");
+let humidity = document.querySelector("#humidity");
 
 function showTemperature(response) {
   console.log(response.data.main.temp);
 
   let temperature = Math.round(response.data.main.temp);
   currentTempMain.innerHTML = `${temperature}°${degrees}`;
+
+  let feelsLikeTemperature = Math.round(response.data.main.feels_like);
+  feelsLike.innerHTML = `${feelsLikeTemperature}°${degrees}`;
+
+  // TODO weather.icon
+
+  weatherDescription.innerHTML = response.data.weather[0].description;
+
+  let minTemperature = Math.round(response.data.main.temp_min);
+  currentLow.innerHTML = `${minTemperature}°${degrees}`;
+
+  let maxTemperature = Math.round(response.data.main.temp_max);
+  currentHigh.innerHTML = `${maxTemperature}°${degrees}`;
+
+  let currentWindSpeed = Math.round(response.data.wind.speed);
+  if (degrees === "C") {
+    windSpeed.innerHTML = `${currentWindSpeed} m/s`;
+  } else {
+    windSpeed.innerHTML = `${currentWindSpeed} mi/h`;
+  }
+
+  let currentHumidity = Math.round(response.data.main.humidity);
+  humidity.innerHTML = `${currentHumidity}%`;
 }
 
 /**
@@ -124,3 +153,7 @@ let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getPosition);
 
 getPosition();
+
+/**
+ *
+ */
